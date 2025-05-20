@@ -975,31 +975,20 @@
     #app-mount .wordmark__421ed {top: 3.3px;}
     #app-mount .winButton__421ed {top: 2px;}
 
-
-/* =========================================================
-   🔚  ABSOLUTE‑LAST BACKDROP OVERRIDE  🔚
-   (add BELOW every other rule in the file)
-   ========================================================= */
-
-/* 1 — define / re‑define the image once */
 :root{
-  --my-backdrop:url("https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png");
+  /* one place to change the picture */
+  --fixed‑bg:url("https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png");
 }
 
-/* 2 — draw it on a body::before layer that sits behind everything */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;                                   /* full‑window */
-  background:var(--my-backdrop) center/cover no-repeat fixed;
-  z-index:-1;                                /* keep it at the very back */
-  pointer-events:none;                       /* don’t block clicks */
+/* 1 ─ draw it once on the html element */
+html{
+  background:var(--fixed‑bg) center/cover no-repeat fixed !important;
 }
 
-/* 3 — strip any opaque backgrounds Discord (or other themes) inject */
-html,body,
+/* 2 ─ keep Discord’s panels from hiding it */
 #app-mount,
 #app-mount > .app_b1f06c,
 #app-mount .bg__960e4{
-  background:none !important;                /* stay transparent */
+  background:none !important;
+  background-image:none !important;
 }
