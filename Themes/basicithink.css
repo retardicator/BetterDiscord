@@ -1,5 +1,6 @@
 :root{
-     --background: url('https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png');
+     --background-image: url("https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png");
+     --background: var(--background-image);
      --activetext-colour: white;
  
      --primary1-colour: purple;
@@ -27,8 +28,19 @@
  */
  
 /*--------------------------------------------------------*/
-#app-mount {
-    background: var(--background-image);
+/* 1 – give the variable the right name */
+
+/* 2 – use a single, locked‑down rule */
+#app-mount{
+    background: var(--background)  center/cover no-repeat fixed !important;
+}
+
+/* 3 – make sure everything that sits on top stays transparent */
+.theme-dark .wrapper_ef3116,
+#app-mount .container__2637a,
+#app-mount .chat_f75fb0,
+#app-mount .scrollableContainer__74017{
+    background: transparent !important;
 }
 
 /* removing backgrounds */
