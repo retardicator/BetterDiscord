@@ -977,18 +977,18 @@
 
 :root{
   /* one place to change the picture */
-  --fixed‑bg:url("https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png");
+     --fixed‑bg:url("https://media.discordapp.net/attachments/1155268978571218974/1374508817836150825/jakarta.png");
 }
 
 /* 1 ─ draw it once on the html element */
 html{
-  background:var(--fixed‑bg) center/cover no-repeat fixed !important;
+     background:var(--fixed‑bg) center/cover no-repeat fixed !important;
 }
 
 /* 2 ─ keep Discord’s panels from hiding it */
 #app-mount,
 #app-mount > .app_b1f06c,
 #app-mount .bg__960e4{
-  background:none !important;
-  background-image:none !important;
+     background:none !important;
+     background-image:none !important;
 }
